@@ -5,8 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
 
-import javax.annotation.processing.Generated;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -17,5 +18,9 @@ public class CursoEntity {
     private UUID id;
     private String name;
     private String category;
+
+    @CreationTimestamp
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
 
 }
